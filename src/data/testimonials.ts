@@ -1,0 +1,42 @@
+export const testimonials = [
+  {
+    id: 1,
+    name: "Rajesh Kumar",
+    role: "Working Professional",
+    branch: "Selaiyur",
+    text: "Living at Aishwaraya Hostel has been a wonderful experience. The rooms are clean, food is homely, and the staff is very helpful. It truly feels like home away from home.",
+    rating: 5,
+  },
+  {
+    id: 2,
+    name: "Priya Sharma",
+    role: "Student",
+    branch: "Tambaram",
+    text: "As a student, I needed a safe and affordable place. Aishwaraya Womens Hostel provided exactly that. The facilities are great and security is top-notch.",
+    rating: 5,
+  },
+  {
+    id: 3,
+    name: "Vikram S.",
+    role: "Job Seeker",
+    branch: "Camp Road",
+    text: "The location is perfect for commuting. WiFi is reliable and the food quality is excellent. I would recommend this to anyone looking for PG accommodation in Chennai.",
+    rating: 4,
+  },
+  {
+    id: 4,
+    name: "Anitha M.",
+    role: "Working Professional",
+    branch: "Velachery",
+    text: "The best women's hostel in Chennai! Clean rooms, CCTV security, and the staff is available 24/7. The food is genuinely delicious.",
+    rating: 5,
+  },
+  {
+    id: 5,
+    name: "Suresh R.",
+    role: "Student",
+    branch: "Chromepet",
+    text: "Affordable pricing and great amenities. The AC rooms are very comfortable and well-maintained. Highly recommended!",
+    rating: 4,
+  },
+];
