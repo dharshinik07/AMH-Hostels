@@ -31,6 +31,10 @@ const step3Schema = z.object({
   email: z.string().email("Invalid email address"),
   tenantType: z.enum(["Student", "Working Professional", "Job Seeker", "Other"]),
   moveInDate: z.string().min(1, "Select a move-in date"),
+  dpdpConsent: z.boolean().refine((val) => val === true, {
+    message: "You must consent to data processing under the DPDP Act 2023 to submit",
+  }),
+  botTrap: z.string().optional(),
 });
 
 const formSchema = step1Schema.merge(step2Schema).merge(step3Schema);
@@ -75,10 +79,12 @@ function BookingForm() {
   } = useForm<FormData>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      category: initialCategory || undefined,
-      branchId: initialBranch,
+      category: initialCategory || "mens",
+      branchId: initialBranch || (branches[0]?.id || ""),
       bunkPreference: "Lower",
       tenantType: "Working Professional",
+      dpdpConsent: false,
+      botTrap: "",
     },
     mode: "onChange"
   });
@@ -180,6 +186,12 @@ function BookingForm() {
   const prevStep = () => setStep((p) => Math.max(p - 1, 0));
 
   const onSubmit = async (data: FormData) => {
+    // Spam bot honeypot detection
+    if (data.botTrap) {
+      setSuccess(true);
+      return;
+    }
+
     if (!otpVerified) {
       setOtpError("Please verify the OTP before submitting.");
       return;
@@ -417,6 +429,42 @@ function BookingForm() {
                       </div>
                       {errors.tenantType && <p className="text-red-500 text-sm">{errors.tenantType.message}</p>}
                     </div>
+
+                    {/* Anti-Spam Honeypot (Invisible to humans, catches automated bots) */}
+                    <input
+                      {...register("botTrap")}
+                      type="text"
+                      className="hidden"
+                      tabIndex={-1}
+                      autoComplete="off"
+                      aria-hidden="true"
+                    />
+                  </div>
+
+                  {/* DPDP Act 2023 Mandatory Consent */}
+                  <div className="p-4 rounded-2xl bg-gray-50 border border-gray-200">
+                    <label className="flex items-start gap-3 cursor-pointer">
+                      <input
+                        type="checkbox"
+                        {...register("dpdpConsent")}
+                        className="mt-1 w-4 h-4 rounded text-primary focus:ring-primary border-gray-300"
+                      />
+                      <span className="text-xs text-gray-700 leading-relaxed">
+                        I give free, informed consent to Aishwaraya Hostels collecting and processing my details (Name, Phone, Email, Move-in Date) strictly for processing this hostel accommodation request in accordance with the{" "}
+                        <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-primary font-bold underline">
+                          Privacy Policy (DPDP Act 2023)
+                        </a>{" "}
+                        and{" "}
+                        <a href="/terms" target="_blank" rel="noopener noreferrer" className="text-primary font-bold underline">
+                          Terms of Service
+                        </a>.
+                      </span>
+                    </label>
+                    {errors.dpdpConsent && (
+                      <p className="text-red-500 text-xs mt-2 font-semibold" role="alert">
+                        {errors.dpdpConsent.message}
+                      </p>
+                    )}
                   </div>
                   
                   {/* Simulated OTP Section as per specs */}

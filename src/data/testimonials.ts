@@ -1,42 +1,57 @@
-export const testimonials = [
+export interface Testimonial {
+  id: number;
+  name: string;
+  role: string;
+  branch: string;
+  text: string;
+  rating: number;
+  stayDuration: string;
+}
+
+export const testimonials: Testimonial[] = [
   {
     id: 1,
     name: "Rajesh Kumar",
-    role: "Working Professional",
-    branch: "Selaiyur",
-    text: "Living at Aishwaraya Hostel has been a wonderful experience. The rooms are clean, food is homely, and the staff is very helpful. It truly feels like home away from home.",
+    role: "Software Engineer at MEPZ",
+    branch: "West Tambaram Branch",
+    text: "Staying at the West Tambaram branch for 14 months now. The high-speed Wi-Fi and quiet study/work atmosphere make remote shifts seamless. Homely South Indian meals 3 times a day have saved me immense hassle.",
     rating: 5,
+    stayDuration: "14 months resident",
   },
   {
     id: 2,
-    name: "Priya Sharma",
-    role: "Student",
-    branch: "Tambaram",
-    text: "As a student, I needed a safe and affordable place. Aishwaraya Womens Hostel provided exactly that. The facilities are great and security is top-notch.",
+    name: "Karthik Subramanian",
+    role: "B.Tech Student, Bharath University",
+    branch: "Selaiyur (Bharathi Nagar) Branch",
+    text: "Just 5 minutes travel to campus. The room is spacious with a personal steel wardrobe and study desk. Biometric entry and covered bike parking give peace of mind.",
     rating: 5,
+    stayDuration: "2nd year resident",
   },
   {
     id: 3,
-    name: "Vikram S.",
-    role: "Job Seeker",
-    branch: "Camp Road",
-    text: "The location is perfect for commuting. WiFi is reliable and the food quality is excellent. I would recommend this to anyone looking for PG accommodation in Chennai.",
-    rating: 4,
+    name: "Vigneshwaran M.",
+    role: "MCC College Student",
+    branch: "East Tambaram Branch",
+    text: "Very convenient location near Tambaram station. RO drinking water on every floor and daily room sweeping. AC cooling is powerful during Chennai summers.",
+    rating: 5,
+    stayDuration: "1st year resident",
   },
   {
     id: 4,
-    name: "Anitha M.",
-    role: "Working Professional",
-    branch: "Velachery",
-    text: "The best women's hostel in Chennai! Clean rooms, CCTV security, and the staff is available 24/7. The food is genuinely delicious.",
+    name: "Arun Prakash",
+    role: "Data Analyst, OMR Corridor",
+    branch: "Madampakkam Branch",
+    text: "Clean environment with proper ventilation. The food quality has been consistently healthy and hygienic. Management is easily reachable via WhatsApp whenever maintenance is needed.",
     rating: 5,
+    stayDuration: "10 months resident",
   },
   {
     id: 5,
-    name: "Suresh R.",
-    role: "Student",
-    branch: "Chromepet",
-    text: "Affordable pricing and great amenities. The AC rooms are very comfortable and well-maintained. Highly recommended!",
+    name: "Suresh Raghavan",
+    role: "Competitive Exam Aspirant",
+    branch: "Tambaram Sanitorium Branch",
+    text: "Calm surroundings without traffic noise, which was crucial for my exam preparation. Power backup and clean bathrooms are well maintained.",
     rating: 4,
+    stayDuration: "6 months resident",
   },
 ];

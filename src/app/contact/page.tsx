@@ -16,6 +16,14 @@ export default function ContactPage() {
     setLoading(true);
 
     const formData = new FormData(e.currentTarget);
+    const botTrap = formData.get("website_bot_trap") as string;
+    if (botTrap) {
+      // Drop bot spam silently
+      setSuccess(true);
+      setLoading(false);
+      return;
+    }
+
     const data = {
       name: formData.get("name") as string,
       phone: formData.get("phone") as string,
@@ -203,6 +211,35 @@ export default function ContactPage() {
                           className="w-full p-4 rounded-xl border border-gray-200 bg-gray-50 focus:bg-white focus:ring-2 focus:ring-primary/20 focus:border-primary outline-none transition-all resize-none"
                           placeholder="How can we help you?"
                         ></textarea>
+                      </div>
+
+                      {/* Honeypot field for bot protection */}
+                      <input
+                        type="text"
+                        name="website_bot_trap"
+                        className="hidden"
+                        tabIndex={-1}
+                        autoComplete="off"
+                        aria-hidden="true"
+                      />
+
+                      {/* DPDP Act 2023 Explicit Consent */}
+                      <div className="p-3.5 rounded-xl bg-gray-50 border border-gray-200">
+                        <label className="flex items-start gap-3 cursor-pointer">
+                          <input
+                            type="checkbox"
+                            required
+                            id="contact_dpdp_consent"
+                            name="contact_dpdp_consent"
+                            className="mt-1 w-4 h-4 rounded text-primary focus:ring-primary border-gray-300"
+                          />
+                          <span className="text-xs text-gray-700 leading-relaxed">
+                            I consent to Aishwaraya Hostels collecting my contact details to respond to this enquiry in compliance with the{" "}
+                            <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-primary font-bold underline">
+                              Privacy Policy (DPDP Act 2023)
+                            </a>.
+                          </span>
+                        </label>
                       </div>
 
                       <Button 

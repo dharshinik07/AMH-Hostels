@@ -30,8 +30,8 @@ export default function AdminLogin() {
   } = useForm<LoginFormData>({
     resolver: zodResolver(loginSchema),
     defaultValues: {
-      email: "admin@aishwarya.com",
-      password: "admin123", // Pre-filled for demo convenience
+      email: "",
+      password: "",
     },
   });
 

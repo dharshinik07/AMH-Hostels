@@ -64,12 +64,12 @@ export async function fetchEnquiries() {
   return getEnquiries();
 }
 
-// Admin Auth
+// Admin Auth - Authenticated securely via server API route (/api/auth)
 export async function adminLogin(email: string, password: string) {
-  const ADMIN_EMAIL = process.env.NEXT_PUBLIC_ADMIN_EMAIL || "admin@aishwarya.com";
-  const ADMIN_PASSWORD = "admin123";
-  if (email === ADMIN_EMAIL && password === ADMIN_PASSWORD) {
-    return { success: true, token: "authenticated" };
-  }
-  return { success: false, token: null };
+  const res = await fetch("/api/auth", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ email, password }),
+  });
+  return res.json();
 }
