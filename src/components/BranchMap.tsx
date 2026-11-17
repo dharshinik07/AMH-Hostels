@@ -88,17 +88,20 @@ export default function BranchMap({ branches }: BranchMapProps) {
                 <span style="display: inline-block; padding: 3px 8px; border-radius: 9999px; font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; background: #1a365d; color: #ffffff;">
                   ${branch.category === "mens" ? "Mens Hostel" : "Womens Hostel"}
                 </span>
-                <span style="font-size: 11px; font-weight: 700; color: #16a34a; background: #f0fdf4; padding: 2px 8px; border-radius: 9999px; border: 1px solid #bbf7d0;">
-                  ${availableBeds} Beds Left
+                <span style="font-size: 10px; font-weight: 700; color: #1e3a8a; background: #eff6ff; padding: 2px 8px; border-radius: 9999px; border: 1px solid #bfdbfe;">
+                  Admissions Open
                 </span>
               </div>
               <h4 style="margin: 0 0 4px 0; font-size: 15px; font-weight: 700; color: #0f172a; line-height: 1.3;">
                 ${branchShortName}
               </h4>
-              <p style="margin: 0 0 10px 0; font-size: 12px; color: #64748b; line-height: 1.45;">
+              <p style="margin: 0 0 8px 0; font-size: 12px; color: #64748b; line-height: 1.45;">
                 ${branch.address}
               </p>
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 10px; padding-top: 8px; border-top: 1px solid #e2e8f0;">
+              <p style="margin: 0 0 10px 0; font-size: 11px; color: #b45309; font-weight: 600; line-height: 1.3;">
+                📞 Call or submit enquiry for current room vacancies & rates
+              </p>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 8px; padding-top: 8px; border-top: 1px solid #e2e8f0;">
                 <a href="tel:${cleanPhone}" style="display: flex; align-items: center; justify-content: center; gap: 4px; padding: 7px 10px; background: #f1f5f9; color: #0f172a; text-decoration: none; border-radius: 8px; font-size: 11px; font-weight: 700; transition: background 0.15s ease;">
                   📞 Call
                 </a>
@@ -238,7 +241,7 @@ export default function BranchMap({ branches }: BranchMapProps) {
               : "bg-white text-gray-700 border-gray-300 hover:bg-gray-50"
           }`}
         >
-          🗺️ Show All 6 Branches
+          🗺️ Show All 8 Branches
         </button>
 
         {branches.map((b, index) => {

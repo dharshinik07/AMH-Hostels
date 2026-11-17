@@ -61,7 +61,7 @@ export default function FacilitiesPage() {
             <Badge variant="primary" className="mb-1 text-xs">Standard Inclusions</Badge>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">12 Essential Amenities</h2>
           </div>
-          <span className="text-xs text-gray-500 font-medium hidden sm:block">Available across all 6 branches</span>
+          <span className="text-xs text-gray-500 font-medium hidden sm:block">Available across all 8 branches</span>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">

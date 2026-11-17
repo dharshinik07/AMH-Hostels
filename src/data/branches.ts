@@ -1,6 +1,6 @@
 import { Branch } from "@/types";
 
-// Real 6 Mens PG Branches provided by user
+// 8 Verified Mens PG Branches in Chennai (Tambaram, Selaiyur, Camp Road, Sembakkam, Madampakkam)
 export const branches: Branch[] = [
   {
     id: "branch-1",
@@ -19,7 +19,7 @@ export const branches: Branch[] = [
     id: "branch-2",
     name: "Aishwaraya Mens Hostel - Sanitorium",
     category: "mens",
-    address: "Sanitorium railway station back side, Bharatha madha street",
+    address: "Sanitorium railway station back side, Bharatha madha street, Tambaram Sanitorium, Chennai - 600047",
     latitude: 12.930821,
     longitude: 80.127613,
     phone: "+91 90434 56234",
@@ -32,7 +32,7 @@ export const branches: Branch[] = [
     id: "branch-3",
     name: "Aishwaraya Mens Hostel - East Tambaram",
     category: "mens",
-    address: "Door No.37/10 Old No.14, Previous Old No.1, Valmiki Street, East Tambaram, Chennai 600059",
+    address: "Door No.37/10 Old No.14, Previous Old No.1, Valmiki Street, East Tambaram, Chennai 600059 (Near MCC College)",
     latitude: 12.928632,
     longitude: 80.129902,
     phone: "+91 90434 56234",
@@ -45,7 +45,7 @@ export const branches: Branch[] = [
     id: "branch-4",
     name: "Aishwaraya Mens Hostel - West Tambaram",
     category: "mens",
-    address: "10, Brindavan Ave, Rajaraththinam street, West Tambaram, Tambaram, Chennai, Tamil Nadu 600045 (Near vidhya theater)",
+    address: "10, Brindavan Ave, Rajaraththinam street, West Tambaram, Tambaram, Chennai, Tamil Nadu 600045 (Near Vidhya Theater & Railway Station)",
     latitude: 12.926587,
     longitude: 80.111066,
     phone: "+91 90434 56234",
@@ -58,7 +58,7 @@ export const branches: Branch[] = [
     id: "branch-5",
     name: "Aishwaraya Mens Hostel - Selaiyur (Bharathi Nagar)",
     category: "mens",
-    address: "No. 3, avvai Street, barathi nagar, selaiyur, Chennai-600073 (Near viveks show room)",
+    address: "No. 3, Avvai Street, Barathi Nagar, Selaiyur, Chennai - 600073 (Near Viveks Showroom & Bharath University)",
     latitude: 12.920311,
     longitude: 80.141296,
     phone: "+91 90434 56234",
@@ -69,9 +69,9 @@ export const branches: Branch[] = [
   },
   {
     id: "branch-6",
-    name: "Aishwaraya Mens Hostel - Selaiyur (IOB Colony)",
+    name: "Aishwaraya Mens Hostel - Selaiyur (IOB Colony Main Rd)",
     category: "mens",
-    address: "No:5A, 1st Main Road, IOB Colony, Camp Road, Selaiyur, Chennai-600073 (Near Bethesda hospital)",
+    address: "No:5A, 1st Main Road, IOB Colony, Camp Road, Selaiyur, Chennai - 600073 (Near Bethesda Hospital)",
     latitude: 12.920457,
     longitude: 80.142896,
     phone: "+91 90434 56234",
@@ -79,6 +79,32 @@ export const branches: Branch[] = [
     totalBeds: 45,
     occupiedBeds: 30,
     image: "/images/branch-6.jpg",
+  },
+  {
+    id: "branch-7",
+    name: "Aishwaraya Mens Hostel - Camp Road (IOB Colony North Ext)",
+    category: "mens",
+    address: "7/3 SRS Twinkle Star Apartment, 1st Cross Street, IOB Colony North Extension, Selaiyur, Camp Road, Chennai - 600073",
+    latitude: 12.922105,
+    longitude: 80.143520,
+    phone: "+91 90434 56234",
+    totalRooms: 12,
+    totalBeds: 48,
+    occupiedBeds: 32,
+    image: "/images/branch-1.jpg",
+  },
+  {
+    id: "branch-8",
+    name: "Aishwaraya Mens Hostel - Sembakkam (Arunagiri Nathar St)",
+    category: "mens",
+    address: "No. 5, Arunagiri Nathar Street, Sembakkam, Chennai - 600073 (Near Velachery Main Road)",
+    latitude: 12.928945,
+    longitude: 80.151240,
+    phone: "+91 90434 56234",
+    totalRooms: 10,
+    totalBeds: 40,
+    occupiedBeds: 25,
+    image: "/images/branch-2.jpg",
   },
 ];
 

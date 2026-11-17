@@ -37,7 +37,7 @@ export default function TermsPage() {
           <section className="space-y-4">
             <h2 className="text-xl md:text-2xl font-bold text-gray-900">1. Business Identification & Scope of Services</h2>
             <p>
-              This website is operated by <strong>Aishwaraya Hostels & PG Accommodations</strong>, operating across 6 branches in Tambaram, Selaiyur, Madampakkam, and surrounding educational corridors in Chennai, Tamil Nadu, India.
+              This website is operated by <strong>Aishwaraya Hostels &amp; PG Accommodations</strong>, operating across 8 branches in Tambaram, Selaiyur, Camp Road, Sembakkam, Madampakkam, and surrounding educational corridors in Chennai, Tamil Nadu, India.
             </p>
             <p>
               The digital platform serves as an informational directory and provisional reservation management tool. It enables students, job seekers, and corporate working professionals to review hostel amenities, browse floor layouts, verify approximate branch proximity to colleges/tech parks, and submit reservation requests.

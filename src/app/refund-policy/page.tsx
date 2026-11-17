@@ -37,7 +37,7 @@ export default function RefundPolicyPage() {
           <section className="space-y-4">
             <h2 className="text-xl md:text-2xl font-bold text-gray-900">1. Advance Booking Token / Reservation Fee</h2>
             <p>
-              When reserving a bed prior to move-in, an advance reservation token is paid to hold the spot across our 6 branches:
+              When reserving a bed prior to move-in, an advance reservation token is paid to hold the spot across our 8 branches:
             </p>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-xs sm:text-sm">
               <div className="p-4 rounded-xl bg-green-50 border border-green-200">

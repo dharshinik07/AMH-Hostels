@@ -66,7 +66,7 @@ export default function MensHostelPage() {
               Book Bed Online <ArrowRight className="w-5 h-5 ml-2" />
             </Button>
             <Button variant="outline" size="lg" href="#mens-branches" className="text-white border-white/30 hover:bg-white/10">
-              View 6 Branches
+              View 8 Branches
             </Button>
           </div>
         </div>
@@ -115,15 +115,14 @@ export default function MensHostelPage() {
       <section id="mens-branches" className="py-20 bg-surface scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge variant="gold" className="mb-3">Our 6 Locations</Badge>
-            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Mens Hostels Across Chennai</h2>
-            <p className="text-gray-600 text-base max-w-2xl mx-auto">Choose the branch closest to your campus, workplace, or transit terminal.</p>
+            <Badge variant="gold" className="mb-3">Our 8 Locations</Badge>
+            <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">Mens Hostels in Tambaram &amp; Chennai</h2>
+            <p className="text-gray-600 text-base max-w-2xl mx-auto">Choose the branch closest to your campus, workplace, or transit terminal in Tambaram, Selaiyur, Camp Road, Sembakkam, or Madampakkam.</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {mensBranches.map((branch, index) => {
               const baseName = branch.name.replace(/^[^-]+ - /, "");
-              const available = branch.totalBeds - branch.occupiedBeds;
               const photo = branchPhotos[index % branchPhotos.length];
 
               return (
@@ -131,7 +130,7 @@ export default function MensHostelPage() {
                   <div className="w-full h-52 bg-gray-200 relative overflow-hidden">
                     <Image 
                       src={photo} 
-                      alt={branch.name} 
+                      alt={`Aishwaraya Mens Hostel at ${baseName} Tambaram Chennai`} 
                       fill 
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
@@ -141,7 +140,7 @@ export default function MensHostelPage() {
                       <Badge variant="primary" className="font-bold text-xs">Mens Hostel</Badge>
                     </div>
                     <div className="absolute top-3 right-3 z-20">
-                      <Badge variant="success" className="font-bold text-xs">{available} Beds Available</Badge>
+                      <Badge variant="success" className="font-bold text-xs bg-green-600 text-white border-none">Admissions Open</Badge>
                     </div>
                     <div className="absolute bottom-3 left-3 z-20 text-white">
                       <h3 className="text-lg font-bold drop-shadow">{baseName}</h3>
@@ -151,7 +150,7 @@ export default function MensHostelPage() {
                   <CardContent className="p-6 flex flex-col flex-1">
                     <p className="text-gray-600 text-xs mb-4 line-clamp-2">{branch.address}</p>
                     
-                    <ul className="space-y-2 mb-6 flex-1">
+                    <ul className="space-y-2 mb-4 flex-1">
                       <li className="flex items-center text-xs text-gray-700">
                         <CheckCircle2 className="w-3.5 h-3.5 text-green-500 mr-2 shrink-0" /> AC & Non-AC Rooms Available
                       </li>
@@ -162,6 +161,11 @@ export default function MensHostelPage() {
                         <CheckCircle2 className="w-3.5 h-3.5 text-green-500 mr-2 shrink-0" /> Optional 3-Times Food Included
                       </li>
                     </ul>
+
+                    <div className="bg-amber-50/80 border border-amber-200/60 rounded-xl p-2.5 mb-4 text-xs text-amber-900">
+                      <span className="font-bold block text-[11px] text-amber-950">📞 Real-Time Vacancy:</span>
+                      <span className="text-[11px] text-amber-800">Call 90434 56234 or submit form for current bed availability &amp; rates.</span>
+                    </div>
 
                     <div className="flex items-center gap-2 mb-4 text-xs font-semibold text-gray-600">
                       <Phone className="w-3.5 h-3.5 text-primary" />
@@ -271,7 +275,7 @@ export default function MensHostelPage() {
           <Badge variant="gold" className="mb-4 bg-white/10 text-gold border-white/20">Reserve Your Spot</Badge>
           <h2 className="text-3xl sm:text-5xl font-bold mb-4">Ready to Join Aishwaraya Mens PG?</h2>
           <p className="text-white/80 text-base max-w-xl mx-auto mb-8">
-            Beds fill up quickly across all 6 branches. Reserve your room online today with zero advance payment required.
+            Admissions fill up quickly across all 8 branches in Tambaram and Selaiyur. Contact us or reserve your room online today with zero booking fee.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Button variant="gold" size="lg" href="/booking?category=mens" className="w-full sm:w-auto font-bold px-10">

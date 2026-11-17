@@ -39,20 +39,16 @@ const BranchMap = dynamic(() => import("@/components/BranchMap"), {
 });
 
 export default function BranchesPage() {
-  const totalBeds = branches.reduce((acc, b) => acc + b.totalBeds, 0);
-  const totalOccupied = branches.reduce((acc, b) => acc + b.occupiedBeds, 0);
-  const totalAvailable = totalBeds - totalOccupied;
-
   return (
     <div className="min-h-screen bg-surface pt-28 pb-20">
       {/* SECTION 1: Header */}
       <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12 text-center">
-        <Badge variant="gold" className="mb-4">6 Prime Locations</Badge>
+        <Badge variant="gold" className="mb-4">8 Prime Locations in Chennai</Badge>
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-          Find Your Perfect <span className="text-primary">Stay in Chennai</span>
+          PGs in Tambaram &amp; <span className="text-primary">8 Prime Chennai Branches</span>
         </h1>
         <p className="text-base md:text-lg text-gray-600 max-w-2xl mx-auto mb-6">
-          Strategically located near premier colleges (MCC, Bharath, SRM) and key transit stations across Chennai. {totalAvailable} beds currently available.
+          Strategically located near premier colleges (MCC, Bharath, SRM) and key transit corridors across Tambaram, Selaiyur, Camp Road, Sembakkam, and Madampakkam. For current room vacancies and rates, submit our quick form or call +91 90434 56234.
         </p>
       </section>
 
@@ -77,15 +73,13 @@ export default function BranchesPage() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <Badge variant="primary" className="mb-1 text-xs">Directory</Badge>
-            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">All 6 Branches in Detail</h2>
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">All 8 Branches in Detail</h2>
           </div>
           <span className="text-xs text-gray-500 font-medium hidden sm:block">Sorted by location</span>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {branches.map((branch, index) => {
-            const available = branch.totalBeds - branch.occupiedBeds;
-            const isLow = available < 8;
             const photo = branchPhotos[index % branchPhotos.length];
 
             return (
@@ -93,7 +87,7 @@ export default function BranchesPage() {
                 <div className="w-full h-56 bg-gray-200 relative overflow-hidden">
                   <Image
                     src={photo}
-                    alt={`Aishwaraya Hostels accommodation branch at ${branch.name.replace(/^[^-]+ - /, "")} Chennai`}
+                    alt={`Aishwaraya Hostels accommodation branch at ${branch.name.replace(/^[^-]+ - /, "")} Tambaram Chennai`}
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
@@ -105,8 +99,8 @@ export default function BranchesPage() {
                     </Badge>
                   </div>
                   <div className="absolute top-3 right-3 z-20">
-                    <Badge variant={isLow ? "warning" : "success"} className="shadow-md text-xs font-bold">
-                      {available} Beds Left
+                    <Badge variant="success" className="shadow-md text-xs font-bold bg-green-600 text-white border-none">
+                      Admissions Open
                     </Badge>
                   </div>
                   <div className="absolute bottom-3 left-3 text-white z-20">
@@ -128,11 +122,9 @@ export default function BranchesPage() {
                         {branch.phone}
                       </a>
                     </div>
-                    <div className="flex items-center gap-2.5">
-                      <BedDouble className="w-4 h-4 text-gray-400 shrink-0" />
-                      <span className="text-xs text-gray-600">
-                        <strong className="text-gray-900">{branch.totalRooms}</strong> Rooms • <strong className="text-gray-900">{branch.totalBeds}</strong> Total Beds
-                      </span>
+                    <div className="bg-amber-50/80 border border-amber-200/60 rounded-xl p-3 text-xs text-amber-900">
+                      <span className="font-bold block text-[11px] text-amber-950">📞 Real-Time Vacancy:</span>
+                      <span className="text-[11px] text-amber-800">Call 90434 56234 or submit enquiry for current bed availability &amp; rates.</span>
                     </div>
                   </div>
                   
@@ -149,7 +141,7 @@ export default function BranchesPage() {
                       href={`/booking?branch=${branch.id}&category=mens`}
                       className="flex items-center justify-center gap-1 py-2.5 rounded-xl gradient-gold text-white text-xs font-bold shadow-sm hover:shadow-md transition-all"
                     >
-                      Book Bed <ArrowRight className="w-3.5 h-3.5" />
+                      Book / Enquire <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
                 </CardContent>
@@ -166,7 +158,7 @@ export default function BranchesPage() {
             <Badge variant="gold" className="mb-2">Connectivity</Badge>
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900">Proximity to Premier Colleges & Tech Corridors</h2>
             <p className="text-gray-600 text-xs sm:text-sm max-w-xl mx-auto mt-2">
-              All 6 Aishwaraya branches are situated within 5–15 minutes travel time from major institutions.
+              All 8 Aishwaraya branches are situated within 5–15 minutes travel time from major institutions in Tambaram, Selaiyur, Camp Road, and Sembakkam.
             </p>
           </div>
 

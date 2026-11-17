@@ -8,7 +8,7 @@ const quickLinks = [
   { href: "/womens-hostel", label: "Womens Hostel" },
   { href: "/rooms", label: "Rooms & Sharing" },
   { href: "/facilities", label: "Facilities & Dining" },
-  { href: "/branches", label: "Our 6 Branches" },
+  { href: "/branches", label: "Our 8 Branches" },
   { href: "/booking", label: "Book Bed Online" },
   { href: "/contact", label: "Contact Us" },
 ];
@@ -34,12 +34,12 @@ export default function Footer() {
               </div>
               <div>
                 <div className="text-lg font-bold text-white tracking-tight">Aishwaraya Hostels</div>
-                <div className="text-[11px] text-gold font-semibold tracking-wider uppercase">Chennai • 6 Branches</div>
+                <div className="text-[11px] text-gold font-semibold tracking-wider uppercase">Tambaram &amp; Chennai • 8 Branches</div>
               </div>
             </div>
 
             <p className="text-slate-300 text-xs sm:text-sm leading-relaxed mb-6">
-              Verified paying guest accommodation across Tambaram, Selaiyur, and Madampakkam. Homely food, split AC rooms, and 24/7 security for students and working professionals.
+              Verified paying guest accommodation across Tambaram (East &amp; West), Selaiyur, Camp Road, Sembakkam, and Madampakkam. Homely food, split AC rooms, and 24/7 security for students and working professionals.
             </p>
 
             <div className="p-3.5 rounded-xl bg-white/5 border border-white/10 text-[11px] text-slate-300 space-y-1 mb-6">
@@ -86,10 +86,10 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Our 6 Branches */}
+          {/* Our 8 Branches */}
           <div>
             <h3 className="text-gold font-bold mb-5 text-xs uppercase tracking-wider">
-              Chennai Branches
+              8 Chennai Branches
             </h3>
             <ul className="space-y-3">
               {branches.map((branch, i) => (

@@ -126,7 +126,7 @@ const faqs = [
   },
   {
     q: "Are there branches near major colleges and IT hubs?",
-    a: "Yes, our 6 branches are strategically located near Tambaram Railway Station, MCC College, Camp Road, Selaiyur, Medavakkam, and Santhosapuram.",
+    a: "Yes, our 8 branches are strategically located across East Tambaram (Near MCC College), West Tambaram (Near Railway Station), Tambaram Sanitorium, Selaiyur Bharathi Nagar (Near Bharath University), Selaiyur Camp Road (IOB Colony), Sembakkam (Arunagiri Nathar St), and Madampakkam.",
   },
 ];
 
@@ -134,10 +134,6 @@ export default function Home() {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
   const [formSubmitted, setFormSubmitted] = useState(false);
   const [formLoading, setFormLoading] = useState(false);
-
-  const totalBeds = branches.reduce((acc, b) => acc + b.totalBeds, 0);
-  const totalOccupied = branches.reduce((acc, b) => acc + b.occupiedBeds, 0);
-  const availableBeds = totalBeds - totalOccupied;
 
   const handleQuickEnquiry = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -193,17 +189,17 @@ export default function Home() {
           <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/10 border border-white/20 backdrop-blur-md mb-6 animate-fade-in">
             <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse"></span>
             <span className="text-white text-xs sm:text-sm font-semibold tracking-wide">
-              {availableBeds} Beds Currently Available Across 6 Chennai Branches
+              Admissions Open across 8 Branches in Tambaram, Selaiyur &amp; Sembakkam
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
-            Experience Premium <br className="hidden sm:block" />
-            <span className="text-gradient">Hostel & PG Living</span>
+            Top PGs in Tambaram <br className="hidden sm:block" />
+            <span className="text-gradient">Best PG for Men at Tambaram</span>
           </h1>
 
           <p className="text-base sm:text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed">
-            Safe, hygienic, and affordable accommodation in Chennai for students and working professionals. Enjoy tasty homestyle South Indian food, 5G Wi-Fi, and 24/7 security.
+            Looking for the finest Mens Hostel in Tambaram? Aishwaraya Hostels offers safe, hygienic, and affordable accommodation across 8 prime locations in Tambaram, Selaiyur, Camp Road, and Sembakkam with homestyle South Indian food, 5G Wi-Fi, and 24/7 security.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -211,7 +207,7 @@ export default function Home() {
               Book Bed Online
             </Button>
             <Button variant="outline" size="lg" href="/branches" className="w-full sm:w-auto text-white border-white/40 hover:bg-white/10">
-              Explore 6 Branches <ArrowRight className="ml-2 w-4 h-4" />
+              Explore 8 Branches <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </div>
 
@@ -241,8 +237,8 @@ export default function Home() {
       <section id="stats" className="relative z-20 -mt-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {[
-            { label: "Prime Chennai Branches", value: "6 Locations", icon: MapPin },
-            { label: "Comfortable Beds", value: `${totalBeds}+ Beds`, icon: BedDouble },
+            { label: "Prime Chennai Branches", value: "8 Locations", icon: MapPin },
+            { label: "Room Configurations", value: "AC & Non-AC", icon: BedDouble },
             { label: "Happy Residents", value: "1,000+", icon: Users },
             { label: "Care & Security", value: "24/7 On-Duty", icon: Shield },
           ].map((stat, i) => (
@@ -273,14 +269,14 @@ export default function Home() {
             {/* Mens PG Card */}
             <div className="relative rounded-3xl overflow-hidden bg-white border border-gray-100 shadow-lg p-8 flex flex-col justify-between group hover:shadow-2xl transition-all">
               <div className="flex justify-between items-start mb-6">
-                <Badge variant="primary" className="text-xs px-3 py-1">6 Active Branches</Badge>
-                <span className="text-xs font-bold text-green-600 bg-green-50 px-3 py-1 rounded-full border border-green-200">
-                  {availableBeds} Beds Left
+                <Badge variant="primary" className="text-xs px-3 py-1">8 Active Branches</Badge>
+                <span className="text-xs font-bold text-green-700 bg-green-50 px-3 py-1 rounded-full border border-green-200">
+                  Admissions Open
                 </span>
               </div>
               <h3 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">Aishwaraya Mens PG</h3>
               <p className="text-gray-600 text-sm mb-6 leading-relaxed">
-                Fully functional with 6 prime locations across Selaiyur, Camp Road, Tambaram, Medavakkam, Santhosapuram, and Perungalathur. Available with AC/Non-AC, homestyle food, and high-speed Wi-Fi.
+                Operating across 8 prime locations in East Tambaram, West Tambaram, Tambaram Sanitorium, Selaiyur (Bharathi Nagar &amp; IOB Colony), Camp Road, Sembakkam, and Madampakkam. Available with split AC/Non-AC, homestyle food, and high-speed Wi-Fi.
               </p>
               <div className="flex flex-wrap gap-2 mb-8">
                 {["2, 3, 4, 6 Sharing", "AC & Non-AC", "Homely Meals", "Parking", "Biometric Access"].map((tag) => (
@@ -336,23 +332,21 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 4. Live Availability & 6 Branches Section */}
+      {/* 4. Live Availability & 8 Branches Section */}
       <section id="branches" className="py-20 bg-white scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <Badge variant="gold" className="mb-3">Real-Time Status</Badge>
             <h2 className="text-3xl sm:text-5xl font-bold text-gray-900 mb-4">
-              Our 6 Prime <span className="text-primary">Chennai Branches</span>
+              Our 8 Prime <span className="text-primary">Chennai Branches</span>
             </h2>
             <p className="text-gray-600 text-base sm:text-lg max-w-2xl mx-auto">
-              Check live bed availability across all 6 locations and reserve your spot before it fills up.
+              Explore our verified Mens PG branches across East Tambaram, West Tambaram, Tambaram Sanitorium, Selaiyur, Camp Road, Sembakkam, and Madampakkam. For current room vacancies and rates, fill out our enquiry form or call our central office.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {branches.map((branch, index) => {
-              const available = branch.totalBeds - branch.occupiedBeds;
-              const isLow = available < 8;
               const branchShortName = branch.name.replace(/^[^-]+ - /, "");
               const branchImage = hostelImages[index % hostelImages.length];
 
@@ -361,7 +355,7 @@ export default function Home() {
                   <div className="relative h-48 w-full overflow-hidden bg-gray-100">
                     <Image
                       src={branchImage}
-                      alt={branch.name}
+                      alt={`Aishwaraya Mens Hostel at ${branchShortName} Tambaram Chennai`}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                     />
@@ -372,8 +366,8 @@ export default function Home() {
                       </Badge>
                     </div>
                     <div className="absolute top-3 right-3">
-                      <Badge variant={isLow ? "warning" : "success"} className="font-bold text-xs shadow-md">
-                        {available} Beds Available
+                      <Badge variant="success" className="font-bold text-xs shadow-md bg-green-600 text-white border-none">
+                        Admissions Open
                       </Badge>
                     </div>
                     <div className="absolute bottom-3 left-3 text-white">
@@ -387,15 +381,14 @@ export default function Home() {
                       <p className="text-xs text-gray-600 line-clamp-2">{branch.address}</p>
                     </div>
 
-                    <div className="bg-gray-50 rounded-xl p-3 mb-4 flex items-center justify-between text-xs text-gray-700">
-                      <div>
-                        <span className="text-gray-400 block text-[10px] uppercase font-bold">Total Rooms</span>
-                        <span className="font-bold text-gray-900">{branch.totalRooms} Rooms</span>
+                    <div className="bg-amber-50/80 border border-amber-200/60 rounded-xl p-3 mb-4 text-xs text-amber-900">
+                      <div className="font-bold flex items-center gap-1.5 mb-1 text-amber-950">
+                        <Sparkles className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                        <span>Admissions Fast Filling</span>
                       </div>
-                      <div className="text-right">
-                        <span className="text-gray-400 block text-[10px] uppercase font-bold">Total Capacity</span>
-                        <span className="font-bold text-gray-900">{branch.totalBeds} Beds</span>
-                      </div>
+                      <p className="text-[11px] text-amber-800 leading-tight">
+                        For real-time bed availability &amp; sharing fees: Call 90434 56234 or fill out the enquiry form.
+                      </p>
                     </div>
 
                     <div className="flex items-center gap-2 mb-4 text-xs font-medium text-gray-500">
@@ -420,7 +413,7 @@ export default function Home() {
                         href={`/booking?branch=${branch.id}&category=mens`}
                         className="font-bold text-xs"
                       >
-                        Book Room
+                        Book / Enquire
                       </Button>
                     </div>
                   </CardContent>
@@ -431,7 +424,7 @@ export default function Home() {
 
           <div className="mt-12 text-center">
             <Button variant="outline" href="/branches" size="lg" className="px-8 font-bold">
-              View All Branch Details & Interactive Map
+              View All 8 Branches &amp; Interactive Map
             </Button>
           </div>
         </div>

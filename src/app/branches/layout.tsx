@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "6 Branches in Chennai & Interactive Map | Aishwaraya Hostels",
+  title: "8 Branches in Tambaram & Chennai | PGs in Tambaram & Mens Hostels",
   description:
-    "Explore all 6 Aishwaraya Hostel locations in Chennai: Selaiyur, Tambaram, Madampakkam. View interactive GPS map, real-time bed availability, and college proximity.",
+    "Explore all 8 Aishwaraya Hostel locations across East Tambaram, West Tambaram, Tambaram Sanitorium, Selaiyur, Camp Road, Sembakkam, and Madampakkam. View interactive GPS map, room amenities, and real-time admissions status.",
   openGraph: {
-    title: "Our 6 Branches in Chennai | Interactive Map | Aishwaraya Hostels",
-    description: "Interactive map and directory for all 6 hostel branches in Tambaram, Selaiyur, and Madampakkam Chennai.",
+    title: "Our 8 Branches in Tambaram & Chennai | PGs in Tambaram & Mens Hostels",
+    description: "Interactive map and directory for all 8 Mens PG hostel branches in Tambaram, Selaiyur, Camp Road, Sembakkam, and Madampakkam Chennai.",
   },
 };
 
